@@ -1,0 +1,150 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.3"
+    }
+    defaultPrim = "viola_description"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over "viola_description" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </viola_description/Physics/joint6>,
+        </viola_description/Physics/joint7_left>,
+        </viola_description/Physics/joint7_right>,
+        </viola_description/Physics/joint5>,
+        </viola_description/Physics/joint4>,
+        </viola_description/Physics/joint3>,
+        </viola_description/Physics/joint2>,
+        </viola_description/Physics/joint1>,
+        </viola_description/Physics/world_to_base>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </viola_description/Geometry/world/base_link/link1/link2/link3/link4/link5/link6>,
+        </viola_description/Geometry/world/base_link/link1/link2/link3/link4/link5>,
+        </viola_description/Geometry/world/base_link/link1/link2/link3/link4>,
+        </viola_description/Geometry/world/base_link/link1/link2/link3>,
+        </viola_description/Geometry/world/base_link/link1/link2>,
+        </viola_description/Geometry/world/base_link/link1>,
+        </viola_description/Geometry/world/base_link>,
+        </viola_description/Geometry/world/base_link/link1/link2/link3/link4/link5/link6/link7_left>,
+        </viola_description/Geometry/world/base_link/link1/link2/link3/link4/link5/link6/link7_right>,
+    ]
+    token isaac:robotType = "Default"
+
+    over "Geometry"
+    {
+        over "world"
+        {
+            over "base_link" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "link1" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "link2" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "link3" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "link4" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "link5" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "link6" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "link7_left" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                        }
+
+                                        over "link7_right" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "world_to_base" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint4" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint5" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint6" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint7_left" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint7_right" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

@@ -1,0 +1,48 @@
+starai-viola-isaac
+Copyright 2026 robonerd19
+
+The scripts, configuration and documentation in this repository are licensed
+under the Apache License, Version 2.0 (see LICENSE).
+
+The files listed below come from third parties. They are NOT covered by the
+Apache License of this repository and keep whatever terms their owners apply.
+
+------------------------------------------------------------------------------
+StarAI Viola robot description (Seeed Studio / FashionStar)
+------------------------------------------------------------------------------
+
+Source:  https://github.com/Seeed-Projects/fashionstar-starai-arm-ros2
+Commit:  be498c0034f30bfbe1ceacafeb773ffd95309a69
+Path:    src/viola_description/
+
+Upstream ships no license file, and its package.xml declares
+"TODO: License declaration". The files are included here so the simulation
+runs without a ROS 2 workspace. If you are the rights holder and want them
+removed or labelled differently, open an issue.
+
+  assets/viola/meshes/*.STL
+      The nine meshes, byte-identical to upstream.
+
+  assets/viola/urdf/viola.urdf
+      upstream urdf/viola_description.urdf with four changes:
+        1. Mesh paths: package://viola_description/meshes/... became
+           ../meshes/... so the file loads without a ROS package path.
+        2. joint1 axis: 7.6e-05 0 -0.999999997 became 0 0 -1.
+        3. joint7_right limits: -3.14..3.14 became -0.03..0, the same range
+           upstream gives joint7_left, which it mimics.
+        4. Line endings: CRLF became LF.
+      The header comment is upstream's and is unchanged.
+
+Derived from those files by the scripts in this repository:
+
+  assets/viola/urdf/viola.xrdf     scripts/make_viola_xrdf.py
+  assets/viola/usd/viola/          scripts/import_viola.py
+
+------------------------------------------------------------------------------
+Required at run time, not included
+------------------------------------------------------------------------------
+
+NVIDIA Isaac Sim 6.0.1, including its Pink inverse-kinematics extension
+(isaacsim.robot_motion.pink) and its cuMotion extension
+(isaacsim.robot_motion.cumotion). Isaac Sim is installed separately and is
+covered by NVIDIA's own license terms.
